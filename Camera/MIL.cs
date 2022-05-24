@@ -11,14 +11,28 @@ namespace Camera
 {
     class CMIL : AbsCCameraBase
     {
+        /// <summary>
+        /// カメラオープン
+        /// </summary>
+        /// <returns></returns>
         public override int Open()
         {
             return 0;
         }
+
+        /// <summary>
+        /// カメラクローズ
+        /// </summary>
+        /// <returns></returns>
         public override int Close()
         {
             return 0;
         }
+
+        /// <summary>
+        /// 画像を表示する
+        /// </summary>
+        /// <returns></returns>
         public override int ShowImage()
         {
             return 0;
@@ -27,10 +41,20 @@ namespace Camera
         {
             return 0;
         }
+
+        /// <summary>
+        /// 画像保存する
+        /// </summary>
+        /// <returns></returns>
         public override int Save()
         {
             return 0;
         }
+
+        /// <summary>
+        /// パターンマッチング
+        /// </summary>
+        /// <returns></returns>
         public override int PatternMatching()
         {
             return 0;

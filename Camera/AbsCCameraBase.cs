@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Camera
 {
+    /// <summary>
+    /// カメラクラスの抽象クラス
+    /// </summary>
     abstract class AbsCCameraBase
     {
         public abstract int Open();

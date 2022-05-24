@@ -58,6 +58,9 @@
     <Reference Include="Camera">
       <HintPath>..\Camera\bin\net5.0\Camera.dll</HintPath>
     </Reference>
+    <Reference Include="ConnectPythonApply">
+      <HintPath>..\ConnectPythonApply\bin\net5.0\ConnectPythonApply.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
