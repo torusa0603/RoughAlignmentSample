@@ -4,9 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RoughAlignmentSample.Camera.Parameter
+namespace Camera.Parameter
 {
-    class CUSB
+    public class CUSB : IParameter
     {
+        public int PortNumber { get; set; }
+
+        public int CheckVariableValidity()
+        {
+            return 0;
+        }
+        public void Dispose()
+        {
+
+        }
+
+        public CUSB ShallowCopy() => (CUSB)MemberwiseClone();
     }
 }
