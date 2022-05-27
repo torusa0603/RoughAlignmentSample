@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RoughAlignmentSample.Camera.Parameter;
+using Camera.Parameter;
 using Newtonsoft.Json;
 using MatroxCS;
+using System.Windows.Forms;
 
 namespace Camera
 {
@@ -15,7 +16,7 @@ namespace Camera
         /// カメラオープン
         /// </summary>
         /// <returns></returns>
-        public override int Open()
+        public override int Open(IParameter ncParameter)
         {
             return 0;
         }
@@ -33,7 +34,7 @@ namespace Camera
         /// 画像を表示する
         /// </summary>
         /// <returns></returns>
-        public override int ShowImage()
+        public override int ShowImage(Panel nplDisplay)
         {
             return 0;
         }

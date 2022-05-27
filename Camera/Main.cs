@@ -1,10 +1,12 @@
 ﻿using System;
+using Camera.Parameter;
 
 namespace Camera
 {
     public class CCameraMain
     {
         AbsCCameraBase m_cCamera;
+        
         public bool m_bOpened { get; private set; } = false;
         public enum enCameraType
         {
@@ -17,22 +19,33 @@ namespace Camera
         /// </summary>
         /// <param name="nenCameraType"></param>
         /// <returns></returns>
-        public int Init(enCameraType nenCameraType)
+        public int Init(enCameraType nenCameraType, string nstrSettingFilePath)
         {
+            IParameter c_parameter = null;
             int i_ret;
             // カメラの種類を選択
             switch (nenCameraType)
             {
                 case enCameraType.GigE:
                     m_cCamera = new CMIL();
+                    c_parameter = new CGigE();
+                    CGigE c_gige_param = new CGigE();
+                    CParameterIO<CGigE>.ReadParameter("", ref c_gige_param);
+                    c_parameter = c_gige_param.ShallowCopy();
                     break;
                 case enCameraType.USB:
                     m_cCamera = new COpenCV();
+                    c_parameter = new CUSB();
+                    CUSB c_usb_param = new CUSB();
+                    CParameterIO<CUSB>.ReadParameter("", ref c_usb_param);
+                    c_parameter = c_usb_param.ShallowCopy();
                     break;
             }
 
+            
+
             //　カメラオープン
-            i_ret = m_cCamera.Open();
+            i_ret = m_cCamera.Open(c_parameter);
 
             switch (i_ret)
             {

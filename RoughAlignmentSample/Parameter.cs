@@ -8,5 +8,6 @@ namespace RoughAlignmentSample
 {
     class Parameter
     {
+        public string CameraType { get; set; }
     }
 }
